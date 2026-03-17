@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coalition Patient Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">Tech.Care</div>
+      <nav class="topnav" aria-label="Primary">
+        <button class="nav-pill active" type="button">Overview</button>
+        <button class="nav-pill" type="button">Patients</button>
+        <button class="nav-pill" type="button">Schedule</button>
+        <button class="nav-pill" type="button">Message</button>
+        <button class="nav-pill" type="button">Transactions</button>
+      </nav>
+      <div class="doctor-chip">
+        <div class="doctor-avatar">SR</div>
+        <div>
+          <p class="doctor-name">Dr. Sarah Remington</p>
+          <p class="doctor-role">General Practitioner</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="layout">
+      <aside class="panel patients-panel" aria-label="Patients">
+        <div class="panel-head">
+          <h2>Patients</h2>
+          <span class="subtle" id="patientCount">1</span>
+        </div>
+        <div id="patientsList" class="patients-list"></div>
+      </aside>
+
+      <section class="center-col">
+        <article class="panel diagnostics-panel">
+          <div class="panel-head">
+            <h2>Diagnosis History</h2>
+            <button type="button" class="month-chip">Last 6 months</button>
+          </div>
+          <div class="chart-wrap">
+            <canvas id="bpChart" aria-label="Blood pressure chart"></canvas>
+          </div>
+          <div class="metrics-grid" id="metricsCards"></div>
+        </article>
+
+        <article class="panel diagnostics-list-panel">
+          <div class="panel-head">
+            <h2>Diagnostic List</h2>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Problem/Diagnosis</th>
+                  <th>Description</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="diagnosticTableBody"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <aside class="right-col">
+        <article class="panel profile-panel">
+          <div class="profile-top">
+            <img id="profileImage" src="" alt="Patient profile" />
+            <h2 id="profileName">Loading...</h2>
+          </div>
+          <dl class="profile-meta" id="profileMeta"></dl>
+          <div class="profile-actions">
+            <button type="button" class="primary-action">Show All Information</button>
+          </div>
+        </article>
+
+        <article class="panel lab-panel">
+          <div class="panel-head">
+            <h2>Lab Results</h2>
+          </div>
+          <ul id="labResultsList" class="lab-list"></ul>
+        </article>
+      </aside>
+    </main>
+
+    <div id="errorBox" class="error-box" role="alert" hidden></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
