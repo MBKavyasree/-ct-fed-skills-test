@@ -1,4 +1,4 @@
-# Coalition FED Skills Test Submission
+# Coalition FED Skills 
 
 This submission is a single-page responsive dashboard implemented with plain HTML, CSS, and JavaScript.
 
@@ -33,7 +33,7 @@ The Basic Auth value is generated in code with `btoa(username + ':' + password)`
 
 Open `index.html` in a browser.
 
-## Zip for Submission
+## Zip 
 
 Create one zip containing:
 
